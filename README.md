@@ -41,3 +41,9 @@ To generate a test grid for printing, use the target mode. Select the paper size
 Example: grid for A4 page size with 6 mm borders and resolution of 720 dpi.
 
     gridgen -M:target -A4 -B:6 -D:720 gridname
+
+This command will generate the gridname_A4_720dpi_b6_f3.png file, whitch you can now print.
+
+You must wait at least 10 minutes after printing to allow the ink to dry (in the case of inkjet printing) or to cool the sheet (in the case of laser printing), since paper can significantly change its size when wet or heated.
+
+Measure the size of the printed grid using a good steel ruler and bright lighting. Try to look perpendicular to the paper to achieve high accuracy.
