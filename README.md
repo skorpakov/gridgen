@@ -5,7 +5,8 @@
 
 * [Overview](#overview)
 * [Usage](#usage)
-* [Printers ajustements](#printers-ajustements)
+* [Printers adjustments](#printers-adjustments)
+* [Scanner adjustments](#scanner-adjustments)
 
 ## Overview
 
@@ -34,7 +35,7 @@ Another task that may also require high accuracy is scanning. For example, conve
 
 The utility uses the ImageMagic library to create images. You must install the library before running the utility. The library is also required to build the utility from the source files. ImageMagic library can be downloaded from the [developer site](https://www.imagemagick.org/script/download.php).
 
-## Printers ajustements
+## Printer adjustments
 
 To generate a test grid for printing, use the target mode. Select the paper size, either by specifying the standard size from A0 to A6, or by specifying the height and width of the sheet in millimeters. Also specify the physical resolution of the printer in DPI. For Epson printers, this is usually 720dpi, for the rest 600dpi. The same resolution should be specified in the printer settings when printing. The grid should fit completely into the print area, so you must specify the size of the borders in millimeters. Specify borders one or two mm larger than indicated in the printer specifications. By the way you will determine the actual size of the borders.
 
@@ -42,8 +43,16 @@ Example: grid for A4 page size with 6 mm borders and resolution of 720 dpi.
 
     gridgen -M:target -A4 -B:6 -D:720 gridname
 
-This command will generate the gridname_A4_720dpi_b6_f3.png file, whitch you can now print.
+This command will generate a file named *gridname_A4_720dpi_b6_f3.png*, which you can now print.
 
 You must wait at least 10 minutes after printing to allow the ink to dry (in the case of inkjet printing) or to cool the sheet (in the case of laser printing), since paper can significantly change its size when wet or heated.
 
 Measure the size of the printed grid using a good steel ruler and bright lighting. Try to look perpendicular to the paper to achieve high accuracy.
+
+Next, there are two options. In professional printers, horizontal printing accuracy is usually high enough. And the vertical size can be adjusted for each type of paper in the driver settings (the Paper Feed Adjustment parameter). For several attempts, you can pick up the feed value and obtain high geometric accuracy of printing.
+
+Inexpensive models usually do not have this setting, and you will have to adjust the size of the images before printing. It is convenient to use any graphics editor which can record a sequence of commands in macros, and then apply them to the desired image (for example, Actions in Adobe Photoshop). You need to write a macro with the image scaling command with parameters that compensate for print distortion. You can calculate these parameters using your printed grid measurements.
+
+## Scanner adjustments
+
+After you have received an accurate printout of the test grid, you can proceed to the scanner adjustments.
