@@ -5,7 +5,7 @@
 
 * [Overview](#overview)
 * [Usage](#usage)
-* [Printers adjustments](#printers-adjustments)
+* [Printer adjustments](#printers-adjustments)
 * [Scanner adjustments](#scanner-adjustments)
 
 ## Overview
