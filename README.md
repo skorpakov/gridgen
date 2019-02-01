@@ -56,3 +56,17 @@ Inexpensive models usually do not have this setting, and you will have to adjust
 ## Scanner adjustments
 
 After you have received an accurate printout of the test grid, you can proceed to the scanner adjustments.
+
+First, you need to generate a mask grid using the mask mode. Paper size and border width should be the same as for a print target grid. The resolution must match the physical scan resolution.
+
+Example: mask grid for A4 page size with 6 mm borders and resolution of 1200 dpi.
+
+    gridgen -M:mask -A4 -B:6 -D:1200 gridname
+    
+This command will generate a file named gridname_A4_1200dpi_b6_mask.png.
+
+Now scan the printed grid on your scanner. You need to select the maximum size of the scan area and disable software interpolation in the scanner settings.
+
+Open the resulting file in a graphic editor and insert a mask on the layer above it. Edit the scanned image so that it matches with the mask using Free transform command or similar. Write the command or sequence of commands in the macro (action). Now you can apply this macro to all images scanned with the same parameters.
+
+![Adjustements of scanned grid](https://skorpakov.github.io/images/gridgen.jpg)
